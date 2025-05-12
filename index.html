@@ -18,8 +18,8 @@
 
   .cake {
     position: relative;
-    width: 200px;
-    height: 150px;
+    width: 300px;
+    height: 230px;
     z-index: 1;
   }
 
@@ -28,35 +28,35 @@
     left: 50%;
     transform: translateX(-50%);
     background: #ffb6c1;
-    border: 3px solid #d2691e;
-    border-radius: 20px;
+    border: 4px solid #d2691e;
+    border-radius: 30px;
     box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
   }
 
   .layer.bottom {
-    width: 200px;
-    height: 80px;
+    width: 300px;
+    height: 120px;
     bottom: 0;
   }
 
   .layer.middle {
-    width: 150px;
-    height: 60px;
-    bottom: 70px;
+    width: 230px;
+    height: 90px;
+    bottom: 105px;
   }
 
   .layer.top {
-    width: 100px;
-    height: 40px;
-    bottom: 120px;
+    width: 160px;
+    height: 60px;
+    bottom: 180px;
   }
 
   .icing {
     position: absolute;
-    top: -15px;
+    top: -20px;
     left: 0;
     width: 100%;
-    height: 30px;
+    height: 40px;
     background: #fff0f5;
     border-radius: 50% / 50%;
     box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
@@ -64,30 +64,30 @@
 
   .sprinkle {
     position: absolute;
-    width: 5px;
-    height: 5px;
+    width: 6px;
+    height: 6px;
     background: #ff69b4;
     border-radius: 50%;
   }
 
   .candle {
     position: absolute;
-    top: -70px;
-    left: calc(50% - 5px);
-    width: 10px;
-    height: 40px;
+    top: -100px;
+    left: calc(50% - 7px);
+    width: 14px;
+    height: 60px;
     background: repeating-linear-gradient(45deg, #ff0, #ff0 2px, #f00 2px, #f00 4px);
-    border-radius: 2px;
+    border-radius: 3px;
     box-shadow: inset 0 0 3px rgba(0,0,0,0.2);
   }
 
   .flame {
     position: absolute;
-    top: -15px;
+    top: -22px;
     left: 50%;
     transform: translateX(-50%);
-    width: 15px;
-    height: 15px;
+    width: 22px;
+    height: 22px;
     background: radial-gradient(circle, gold, orange, red);
     border-radius: 50%;
     opacity: 0.9;
@@ -101,10 +101,11 @@
   }
 
   h1 {
-    margin-top: 20px;
+    margin-top: 30px;
     color: #ff1493;
     text-shadow: 1px 1px 3px #ccc;
-    font-size: 2em;
+    font-size: 3em;
+    text-align: center;
     z-index: 1;
   }
 
@@ -148,10 +149,10 @@
   // Decoraciones del pastel
   const layers = document.querySelectorAll('.layer');
   layers.forEach(layer => {
-    for (let i = 0; i < 15; i++) {
+    for (let i = 0; i < 20; i++) {
       const sprinkle = document.createElement('div');
       sprinkle.className = 'sprinkle';
-      sprinkle.style.top = Math.random() * 80 + 'px';
+      sprinkle.style.top = Math.random() * layer.offsetHeight + 'px';
       sprinkle.style.left = Math.random() * (layer.offsetWidth - 5) + 'px';
       sprinkle.style.backgroundColor = ['#ff69b4', '#ffa500', '#8a2be2'][Math.floor(Math.random()*3)];
       layer.appendChild(sprinkle);
